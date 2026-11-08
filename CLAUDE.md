@@ -1,0 +1,53 @@
+# Food Delivery App
+
+Zomato-inspired, browser-only food delivery web app (MVP). Mobile app is out of scope until after web launch.
+
+## Tech Stack
+TypeScript, Next.js (App Router), Tailwind CSS, shadcn/ui, Supabase (Auth, PostgreSQL, Storage). DB access via the `pg` driver with parameterised SQL (no ORM); Supabase client is for auth/storage only.
+
+## Product Decisions
+- Payment: Cash on Delivery only.
+- Restaurants self-onboard and go live immediately (no admin approval); admin can disable.
+
+## Architecture Rules (MVC)
+- **View:** UI logic only in UI components (`src/app`, `src/components`).
+- **Controller:** all APIs in `src/app/api/**/route.ts`, following Next.js route handler standards. Validate, authorise, delegate to services. No business logic.
+- **Services:** all business logic in `src/services`.
+- **Models/Repositories:** DB access only via `src/repositories` (SQL via `pg`) / `src/models` (entity types).
+- Follow SOLID and standard design patterns; keep code well structured.
+
+## UI Component Rules
+- Every UI component must come from the shadcn/ui library wherever possible (Button, Input, Card, Dialog, Select, Table, Form, etc.). Check shadcn/ui first before building anything custom.
+- Add missing components via the CLI (`npx shadcn@latest add <component>`) into `src/components/ui`; do not hand-write equivalents.
+- Build custom components only when shadcn/ui has no suitable one; compose them from shadcn/ui primitives and Tailwind utilities, and state why in the PR/commit.
+- Do not introduce other UI libraries (MUI, Chakra, Ant, etc.).
+- Do not modify generated files in `src/components/ui` except for theming/variants.
+
+## Documentation Conventions
+- All project-specific docs live in `/Users/shakir/trainings/food-delivery-app/project-docs`.
+- `my-docs/` holds user-authored inputs (e.g. `requirements.md`); do not put generated docs there.
+
+| Document | Location |
+|---|---|
+| Requirements (user input) | `my-docs/requirements.md` |
+| PRD (Step 1) | `project-docs/prd.md` |
+| Supabase setup guide (auth, DB, storage) | `project-docs/auth-setup.md` |
+| User stories (Step 2) | `project-docs/user-stories.md` |
+| Architecture (Step 3) | `project-docs/architecture.md` |
+
+## Workflow
+Deliverables are strictly ordered: PRD → User Stories → Architecture. Start each step only after the user approves the previous one. User stories are grouped into epics; project scaffolding is the first story.
+
+## Branching Rules
+- `release/dev` is the integration branch; `main` is the release branch.
+- Every new task (i.e. each new Claude chat/context) must start on a new feature branch created from the latest `release/dev`:
+  `git checkout release/dev && git pull && git checkout -b feature/<short-task-name>`
+- Do this before making any changes. Never commit directly to `release/dev` or `main`.
+- Branch names: `feature/<short-kebab-case-description>` (e.g. `feature/project-scaffolding`).
+- After the task is completed, follow this sequence:
+  1. Commit the changes on the feature branch.
+  2. Push the branch to the remote.
+  3. Open a PR into `release/dev`.
+  4. Review the PR — skip this step if the task is UI mock-ups only.
+  5. Resolve any issues found in the review and push the fixes.
+  6. Merge the PR, then switch back to `release/dev` and pull the latest.

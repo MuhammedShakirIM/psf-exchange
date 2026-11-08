@@ -15,3 +15,8 @@ Help me to seed a new application in the current folder : nextjs, tailwind, shad
 ## Login Page
 
 This app must start with the login page. Design and implement a login page which will except user name and password and also will have the option for the user to "forgot password". Use shadcn components including the button. And design it elegantly as per modern standards
+
+
+## Mock screens prompt
+
+Refer to the /Users/shakir/trainings/food-delivery-app/project-docs file and design the mock user interface end to end for each possibsle screen for the entire app for me to review. 

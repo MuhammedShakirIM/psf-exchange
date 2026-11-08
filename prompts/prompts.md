@@ -47,3 +47,9 @@ Update the CLAUDE.md file of this project to make sure that the aforementioned r
 
 I repeat : for now - create user story files only for epic 1 and later when I ask : ony then create story files for other epics
 
+
+# Builing Epic 0
+
+I want you to build all stories of epic 0 making sure that you following the branching rules including : merge the P.R after review and resolving the issues. And checkout release/dev and update the same. and do delete the merged branch from local and remote. Each story must have its own feature branch. Update Claude.md to reflect the story building rules
+
+

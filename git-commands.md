@@ -13,6 +13,6 @@
 
 
 - git init
-- touch .gitignore
+- touch .gitignore | On windows : echo "This is a test file" >> README.md
 - git add --all
 - git commit -m "initial"

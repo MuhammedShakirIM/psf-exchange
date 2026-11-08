@@ -16,6 +16,11 @@ Help me to seed a new application in the current folder : nextjs, tailwind, shad
 
 This app must start with the login page. Design and implement a login page which will except user name and password and also will have the option for the user to "forgot password". Use shadcn components including the button. And design it elegantly as per modern standards
 
+## Branch rule prompt that would add to CLAUDE.md
+
+I want you to update @CLAUDE.md  with the following branching rules. Every new task (started with the new claude chat / context) must end up creating the new feature branch from release/dev.
+
+
 
 ## Mock screens prompt
 

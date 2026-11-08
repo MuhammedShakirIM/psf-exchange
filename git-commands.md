@@ -12,7 +12,7 @@
 9. Make sure that ypu can see the file on the server
 
 
-git init
-touch .gitignore
-git add --all
-git commit -m "initial"
+- git init
+- touch .gitignore
+- git add --all
+- git commit -m "initial"

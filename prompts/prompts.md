@@ -1,3 +1,15 @@
+# Prompts on 14 Nov
+
+## Basic Python Code to Invoke LLM API
+
+1. This is not a production grade project. 
+2. This is a learning project where I want you to give me - simple PoC code  using plain python libraries and required SDK from claude that would help to make token based API Calls to Claude Sonnet 5.5 model. Demonstrate the API call with a simple request and show the response on the console / terminal. 
+3. Scaffold a new uv based python project and do the needful.
+
+
+
+
+
 # Prompts Used in the Training
 
 

@@ -41,3 +41,13 @@ for chunk in completion:
 1. I am not happy with the struture of the project
 2. I want you to restructure the project such that ./psf-ai-engineering is the root of the project with all the root files of the project like pyproject.tolm file
 3. Run any poc code must be from the root project folder like : uv run claude_poc/<< the exact poc implementation file>> Do not implement the logic in  __init__.py   Likewise for all the PoCs in future
+
+
+
+
+## PoC with Claude Subscription Adapter
+
+1. Refer to the /Users/shakir/claude-subscription-adapter/README.md
+2. Create new PoC called claude_subscription_poc in this project. note that I have already started the server.
+
+
